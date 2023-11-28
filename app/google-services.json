@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1093240224018",
+    "project_id": "eventpro-6227a",
+    "storage_bucket": "eventpro-6227a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1093240224018:android:e7cad06431bd7e3ddb5bcb",
+        "android_client_info": {
+          "package_name": "com.example.eventpro"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHMxbfbFuSVY_i9dCZ3pIk08lB0lWTkG8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
