@@ -1,24 +1,29 @@
 package com.example.eventpro;
 
+// Created By Mansi Bhayade
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.Manifest;
-
-import androidx.appcompat.widget.ActionMenuView;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationManager;
 
 import android.os.Bundle;
 import android.os.Looper;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.LocationRequest;
@@ -26,11 +31,18 @@ import com.google.android.gms.location.LocationResult;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
     TextView loc ;
 
+    FloatingActionButton add_event;
+
     FusedLocationProviderClient fusedLocationProviderClient;
+
+    MainAdapter mainAdapter;
 
 
     @Override
@@ -38,8 +50,32 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        FirebaseApp.initializeApp(this);
+
         Toolbar toolbar = findViewById(R.id.action_bar);
         setSupportActionBar(toolbar);
+
+        add_event = findViewById(R.id.add_event);
+
+        // retrieve items from firebase
+        RecyclerView recyclerView = findViewById(R.id.rv);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        recyclerView.setLayoutManager(layoutManager);
+
+        FirebaseRecyclerOptions<MainModel> options =
+                new FirebaseRecyclerOptions.Builder<MainModel>()
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Event"), MainModel.class)
+                        .build();
+        mainAdapter = new MainAdapter(options);
+        recyclerView.setAdapter(mainAdapter);
+        add_event.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Open a new activity when the FAB is clicked
+                Intent intent = new Intent(MainActivity.this, AddEvent.class);
+                startActivity(intent);
+            }
+        });
 
         loc = findViewById(R.id.loc_text);
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(
@@ -108,4 +144,17 @@ public class MainActivity extends AppCompatActivity {
             });
         }
     }
+
+    @Override
+    protected void onStart(){
+        super.onStart();
+        mainAdapter.startListening();
+    }
+
+    @Override
+    protected void onStop(){
+        super.onStop();
+        mainAdapter.stopListening();
+    }
+
 }

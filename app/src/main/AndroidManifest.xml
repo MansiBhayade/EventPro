@@ -30,6 +30,10 @@
             android:exported="true">
         </activity>
 
+        <activity
+            android:name=".AddEvent">
+        </activity>
+
     </application>
 
 </manifest>

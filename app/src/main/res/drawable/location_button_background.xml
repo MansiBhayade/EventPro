@@ -1,0 +1,6 @@
+<!-- res/drawable/location_button_background.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="#DDBB86FC" /> <!-- Change the color to your desired button color -->
+    <corners android:radius="10dp" /> <!-- Adjust the radius to control the corner roundness -->
+</shape>
