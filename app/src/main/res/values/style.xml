@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="CalendarDateText" parent="@android:style/Widget.CalendarView">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textStyle">Calibri</item>
+        <item name="android:textSize">20dp</item>
+    </style>
+
+    <style name="CalendarWeekDayText" parent="@android:style/Widget.CalendarView">
+        <item name="android:textColor">#303F9F</item>
+        <item name="android:textStyle">Calibri</item>
+        <item name="android:textSize">20dp</item>
+    </style>
+
+    <style name="CalendarWeekNumberText" parent="@android:style/Widget.CalendarView">
+        <item name="android:textColor">#50EBEC</item>
+        <item name="android:textStyle">Calibri</item>
+        <item name="android:textSize">20dp</item>
+    </style>
+
+</resources>
