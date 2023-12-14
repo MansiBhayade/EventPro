@@ -1,0 +1,27 @@
+<!-- res/layout/toolbar.xml -->
+<androidx.appcompat.widget.Toolbar
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/action_bar"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:background="#1F3F42">
+
+    <TextView
+        android:id="@+id/textViewTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+<!--<androidx.appcompat.widget.ActionMenuView-->
+<!--    android:id = "@+id/action_menu_view"-->
+<!--android:layout_width="wrap_content"-->
+<!--android:layout_height="wrap_content"-->
+<!--    app:theme="@style/ThemeOverlay.AppCompat.ActionBar">-->
+
+<!--</androidx.appcompat.widget.ActionMenuView>-->
+
+</androidx.appcompat.widget.Toolbar>
+
