@@ -31,10 +31,7 @@
         <CalendarView
             android:layout_width="wrap_content"
             android:layout_height="320dp"
-            android:background="@android:color/transparent"
-            android:dateTextAppearance="@style/CalendarDateText"
-            android:weekDayTextAppearance="@style/CalendarWeekDayText"
-            android:weekNumberTextAppearance="@style/CalendarWeekNumberText" />
+             />
 
     </LinearLayout>
 
