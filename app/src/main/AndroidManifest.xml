@@ -34,6 +34,11 @@
             android:name=".AddEvent">
         </activity>
 
+        <activity
+            android:name=".Calendar"
+            >
+        </activity>
+
     </application>
 
 </manifest>

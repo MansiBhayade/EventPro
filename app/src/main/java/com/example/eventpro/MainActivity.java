@@ -23,6 +23,7 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.PopupWindow;
 import android.widget.TextView;
@@ -60,6 +61,8 @@ public class MainActivity extends AppCompatActivity {
 
         add_event = findViewById(R.id.add_event);
         loc_image = findViewById(R.id.loc);
+
+
 
         loc_image.setOnClickListener(new View.OnClickListener() {
             @Override

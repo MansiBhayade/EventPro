@@ -15,7 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="#80FFFFFF">
+        android:background="@color/white">
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id ="@+id/image_url"
@@ -67,6 +67,17 @@
             android:hint="Venue"
             android:textColor="#636363"
             android:textSize="20dp"
+            />
+
+        <Button
+            android:id="@+id/btn_calendar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/btn_calendar"
+            android:layout_margin="20dp"
+            android:text="@string/btn_calendar"
+            android:padding="10dp"
+            android:background="@color/purple_500"
             />
 
     </LinearLayout>

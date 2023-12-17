@@ -1,8 +1,12 @@
 package com.example.eventpro;
 
+import static androidx.core.content.ContextCompat.startActivity;
+
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -12,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+
 
 public class MainAdapter extends FirebaseRecyclerAdapter<MainModel,MainAdapter.myViewHolder> {
 
@@ -37,6 +42,18 @@ public class MainAdapter extends FirebaseRecyclerAdapter<MainModel,MainAdapter.m
                .placeholder(R.drawable.ic_launcher_background)
                .error(R.drawable.ic_launcher_background)
                .into(holder.img);
+
+       /* holder.btn_calendar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+               Intent intent = new Intent(holder.itemView.getContext(), Calendar.class);
+
+                // Start the new activity
+                holder.itemView.getContext().startActivity(intent);
+
+            }
+        }); */
     }
 
     @NonNull
@@ -49,6 +66,8 @@ public class MainAdapter extends FirebaseRecyclerAdapter<MainModel,MainAdapter.m
     class myViewHolder extends RecyclerView.ViewHolder{
 
         ImageView img;
+
+        Button btn_calendar;
         TextView event_name,details,venue,org;
 
         public myViewHolder(@NonNull View itemView) {
@@ -59,6 +78,17 @@ public class MainAdapter extends FirebaseRecyclerAdapter<MainModel,MainAdapter.m
              details = itemView.findViewById(R.id.details);
              venue = itemView.findViewById(R.id.venue);
              img = itemView.findViewById(R.id.image_url);
+            btn_calendar = itemView.findViewById(R.id.btn_calendar);
+
+            btn_calendar.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(itemView.getContext(), Calendar.class);
+                    itemView.getContext().startActivity(intent);
+                    
+                }
+            });
+
         }
     }
 }
