@@ -42,18 +42,6 @@ public class MainAdapter extends FirebaseRecyclerAdapter<MainModel,MainAdapter.m
                .placeholder(R.drawable.ic_launcher_background)
                .error(R.drawable.ic_launcher_background)
                .into(holder.img);
-
-       /* holder.btn_calendar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-               Intent intent = new Intent(holder.itemView.getContext(), Calendar.class);
-
-                // Start the new activity
-                holder.itemView.getContext().startActivity(intent);
-
-            }
-        }); */
     }
 
     @NonNull
