@@ -26,7 +26,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:background="#cfa1bc" />
+        android:background="#C41E91" />
 
     <Button
         android:id="@+id/myButton"
@@ -35,7 +35,7 @@
         android:layout_gravity="center"
         android:layout_margin="20dp"
         android:layout_marginTop="20dp"
-        android:text="AddEvent " />
+        android:text="Add Event " />
 
 
 </LinearLayout>
