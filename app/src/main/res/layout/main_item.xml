@@ -80,6 +80,18 @@
             android:background="@color/purple_500"
             />
 
+        <Button
+            android:id="@+id/btn_direction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/btn_direction"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="20dp"
+            android:text="@string/btn_direction"
+            android:padding="10dp"
+            android:background="@color/purple_500"
+            />
+
     </LinearLayout>
     </ScrollView>
 </androidx.cardview.widget.CardView>

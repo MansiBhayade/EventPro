@@ -55,7 +55,7 @@ public class MainAdapter extends FirebaseRecyclerAdapter<MainModel,MainAdapter.m
 
         ImageView img;
 
-        Button btn_calendar;
+        Button btn_calendar, btn_direction;
         TextView event_name,details,venue,org;
 
         public myViewHolder(@NonNull View itemView) {
@@ -67,6 +67,7 @@ public class MainAdapter extends FirebaseRecyclerAdapter<MainModel,MainAdapter.m
              venue = itemView.findViewById(R.id.venue);
              img = itemView.findViewById(R.id.image_url);
             btn_calendar = itemView.findViewById(R.id.btn_calendar);
+            btn_direction = itemView.findViewById(R.id.btn_direction);
 
             btn_calendar.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -74,6 +75,14 @@ public class MainAdapter extends FirebaseRecyclerAdapter<MainModel,MainAdapter.m
                     Intent intent = new Intent(itemView.getContext(), Calendar.class);
                     itemView.getContext().startActivity(intent);
                     
+                }
+            });
+
+            btn_direction.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(itemView.getContext(), GetDirectionActivity.class);
+                    itemView.getContext().startActivity(intent);
                 }
             });
 

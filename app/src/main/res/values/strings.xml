@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">EventPro</string>
     <string name="btn_calendar">Add to Calendar</string>
+    <string name="btn_direction">Get Direction</string>
 </resources>
