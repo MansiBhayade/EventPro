@@ -2,48 +2,42 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@drawable/log"
-        android:theme="@style/Theme.Design.NoActionBar"
         android:label="@string/app_name"
         android:supportsRtl="true"
+        android:theme="@style/Theme.Design.NoActionBar"
         tools:targetApi="31">
+        <activity
+            android:name=".activity_weather"
+            android:exported="false" />
+        <activity
+            android:name=".Weather"
+            android:exported="false" />
         <activity
             android:name=".Splashactivity"
             android:exported="true"
             android:theme="@style/Theme.Design.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-        </activity>
-
-        <activity
-            android:name=".AddEvent">
-        </activity>
-
-        <activity
-            android:name=".Calendar"
-            >
-        </activity>
-
-        <activity
-            android:name=".GetDirectionActivity"
-            >
-        </activity>
-
+            android:exported="true"></activity>
+        <activity android:name=".AddEvent"></activity>
+        <activity android:name=".Calendar"></activity>
+        <activity android:name=".GetDirectionActivity"></activity>
     </application>
 
 </manifest>
