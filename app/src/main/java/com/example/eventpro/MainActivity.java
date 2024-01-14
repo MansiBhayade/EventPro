@@ -50,6 +50,8 @@ public class MainActivity extends AppCompatActivity {
 
     MainAdapter mainAdapter;
 
+    Button btnShowWeather;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
 
         add_event = findViewById(R.id.add_event);
         loc_image = findViewById(R.id.loc);
+        btnShowWeather = findViewById(R.id.btnShowWeather);
 
 
 
@@ -71,8 +74,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btnShowWeather.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Launch WeatherActivity when the weather button is clicked
+                launchWeather();
+            }
+        });
 
-        // retrieve items from firebase
+
+
+
+    // retrieve items from firebase
         RecyclerView recyclerView = findViewById(R.id.rv);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         recyclerView.setLayoutManager(layoutManager);
@@ -83,7 +96,8 @@ public class MainActivity extends AppCompatActivity {
                         .build();
         mainAdapter = new MainAdapter(options);
         recyclerView.setAdapter(mainAdapter);
-        add_event.setOnClickListener(new View.OnClickListener() {
+
+      add_event.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // Open a new activity when the FAB is clicked
@@ -135,6 +149,13 @@ public class MainActivity extends AppCompatActivity {
         // Show the pop-up at the center of the screen
         popupWindow.showAtLocation(anchorView, Gravity.CENTER, 0, 0);
     }
+
+    private void launchWeather() {
+        // Start WeatherActivity when the weather button is clicked
+        Intent weatherIntent = new Intent(MainActivity.this, Weather.class);
+        startActivity(weatherIntent);
+    }
+
 
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
