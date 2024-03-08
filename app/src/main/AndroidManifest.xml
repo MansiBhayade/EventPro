@@ -17,12 +17,6 @@
         android:theme="@style/Theme.Design.NoActionBar"
         tools:targetApi="31">
         <activity
-            android:name=".activity_weather"
-            android:exported="false" />
-        <activity
-            android:name=".Weather"
-            android:exported="false" />
-        <activity
             android:name=".Splashactivity"
             android:exported="true"
             android:theme="@style/Theme.Design.NoActionBar">
@@ -38,6 +32,8 @@
         <activity android:name=".AddEvent"></activity>
         <activity android:name=".Calendar"></activity>
         <activity android:name=".GetDirectionActivity"></activity>
+        <activity android:name=".Weather"></activity>
+        <activity android:name=".cityFinder"></activity>
     </application>
 
 </manifest>

@@ -92,6 +92,18 @@
             android:background="@color/purple_500"
             />
 
+        <Button
+            android:id="@+id/btn_weather"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/btn_weather"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="20dp"
+            android:text="@string/btn_weather"
+            android:padding="10dp"
+            android:background="@color/purple_500"
+            />
+
     </LinearLayout>
     </ScrollView>
 </androidx.cardview.widget.CardView>
