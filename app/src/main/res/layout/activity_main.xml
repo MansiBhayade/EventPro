@@ -58,11 +58,5 @@
         android:contentDescription="Add Event"
         android:src="@drawable/add" />
 
-    <Button
-        android:id="@+id/btnShowWeather"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/rv"
-        android:layout_marginTop="-68dp"
-        android:text="Show Weather" />
+
 </RelativeLayout>
