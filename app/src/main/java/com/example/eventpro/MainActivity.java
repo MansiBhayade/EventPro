@@ -50,8 +50,6 @@ public class MainActivity extends AppCompatActivity {
 
     MainAdapter mainAdapter;
 
-    Button btnShowWeather;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,9 +61,6 @@ public class MainActivity extends AppCompatActivity {
 
         add_event = findViewById(R.id.add_event);
         loc_image = findViewById(R.id.loc);
-        btnShowWeather = findViewById(R.id.btnShowWeather);
-
-
 
         loc_image.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,17 +68,6 @@ public class MainActivity extends AppCompatActivity {
                 getCurrentLocation();
             }
         });
-
-        btnShowWeather.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // Launch WeatherActivity when the weather button is clicked
-                launchWeather();
-            }
-        });
-
-
-
 
     // retrieve items from firebase
         RecyclerView recyclerView = findViewById(R.id.rv);
@@ -148,12 +132,6 @@ public class MainActivity extends AppCompatActivity {
 
         // Show the pop-up at the center of the screen
         popupWindow.showAtLocation(anchorView, Gravity.CENTER, 0, 0);
-    }
-
-    private void launchWeather() {
-        // Start WeatherActivity when the weather button is clicked
-        Intent weatherIntent = new Intent(MainActivity.this, Weather.class);
-        startActivity(weatherIntent);
     }
 
 
