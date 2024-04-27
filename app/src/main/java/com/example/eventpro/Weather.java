@@ -28,7 +28,7 @@ import cz.msebera.android.httpclient.Header;
 
 public class Weather extends AppCompatActivity {
 
-    final String APP_ID = "your api key";
+    final String APP_ID = "cfff11f48e20403a803df33bb751b8cc";
     final String WEATHER_URL = "https://api.openweathermap.org/data/2.5/weather";
 
     final long MIN_TIME = 5000;
@@ -65,8 +65,7 @@ public class Weather extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
+        getWeatherForCurrentLocation();
     }
 /*
     @Override
@@ -85,12 +84,6 @@ public class Weather extends AppCompatActivity {
         {
             getWeatherForNewCity(city);
         }
-        else
-        {
-            getWeatherForCurrentLocation();
-        }
-
-
     }
 
     private void getWeatherForNewCity(String city)
@@ -118,9 +111,6 @@ public class Weather extends AppCompatActivity {
                 params.put("lon",Longitude);
                 params.put("appid",APP_ID);
                 letsdoSomeNetworking(params);
-
-
-
 
             }
 
@@ -219,6 +209,7 @@ public class Weather extends AppCompatActivity {
 
 
     }
+
 
     @Override
     protected void onPause() {

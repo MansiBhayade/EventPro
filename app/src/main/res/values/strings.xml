@@ -3,4 +3,5 @@
     <string name="btn_calendar">Add to Calendar</string>
     <string name="btn_direction">Get Direction</string>
     <string name="btn_weather">Check Weather</string>
+    <string name="btn_feedback">Give Feedback</string>
 </resources>

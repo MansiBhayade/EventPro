@@ -18,7 +18,7 @@ public class Feedback extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.feedback);
 
         // Initialize views
         feedback1 = findViewById(R.id.feedback1);
@@ -31,6 +31,9 @@ public class Feedback extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 submitFeedback();
+                feedback1.getText().clear();
+                feedback2.getText().clear();
+                ratingBarSession.setRating(0.0f);
             }
         });
     }
@@ -43,7 +46,7 @@ public class Feedback extends AppCompatActivity {
         float rating = ratingBarSession.getRating();
 
         // You can process the feedback here, for now, let's just display it in a toast message
-        String feedbackMessage = "Name: " + name + "\nComments: " + comments + "\nRating: " + rating;
+        String feedbackMessage = "Your  following feedback is recorded" + "\nEvent Name: " + name + "\nComments: " + comments + "\nRating: " + rating;
         Toast.makeText(this, feedbackMessage, Toast.LENGTH_LONG).show();
     }
 }

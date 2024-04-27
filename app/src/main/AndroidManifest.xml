@@ -34,6 +34,7 @@
         <activity android:name=".GetDirectionActivity"></activity>
         <activity android:name=".Weather"></activity>
         <activity android:name=".cityFinder"></activity>
+        <activity android:name=".Feedback"></activity>
     </application>
 
 </manifest>

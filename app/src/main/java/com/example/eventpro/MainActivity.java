@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
 
 //        setSupportActionBar(toolbar);
 
-        add_event = findViewById(R.id.add_event);
+//        add_event = findViewById(R.id.add_event);
         loc_image = findViewById(R.id.loc);
 
         loc_image.setOnClickListener(new View.OnClickListener() {
@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
         mainAdapter = new MainAdapter(options);
         recyclerView.setAdapter(mainAdapter);
 
-      add_event.setOnClickListener(new View.OnClickListener() {
+/*      add_event.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // Open a new activity when the FAB is clicked
@@ -89,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
+*/
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(
                 MainActivity.this
         );
