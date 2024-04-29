@@ -12,7 +12,7 @@
         android:layout_marginTop="30dp"
         android:layout_marginEnd="30dp"
         android:layout_marginBottom="30dp"
-        android:text="Check Your City Weather :"
+        android:text="Check City Weather :"
         android:textColor="@color/white"
         android:textSize="25sp"
         android:textStyle="bold" />
@@ -61,21 +61,21 @@
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/btn_next"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="30dp"
-        android:background="#BA208E"
-        android:padding="10dp"
-        android:text="Check Weather For City">
+<!--    <Button-->
+<!--        android:id="@+id/btn_next"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_marginStart="30dp"-->
+<!--        android:layout_marginTop="30dp"-->
+<!--        android:layout_marginEnd="30dp"-->
+<!--        android:layout_marginBottom="30dp"-->
+<!--        android:background="#BA208E"-->
+<!--        android:padding="10dp"-->
+<!--        android:text="Check Weather For City">-->
 
-    </Button>
+<!--    </Button>-->
 
 
 </RelativeLayout>

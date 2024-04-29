@@ -11,6 +11,13 @@
     <!--        android:id="@+id/action_bar"-->
     <!--        layout="@layout/action_bar" />-->
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#2F0C4C"
+        />
+
 
     <ImageView
         android:id="@+id/loc"
@@ -19,6 +26,7 @@
         android:layout_alignRight="@id/text1"
         android:layout_alignParentEnd="true"
         android:layout_marginRight="-13dp"
+        android:layout_below="@+id/toolbar"
         android:clickable="true"
         android:contentDescription="Device Location"
         android:src="@drawable/loc1" />
@@ -30,6 +38,7 @@
         android:layout_marginStart="5dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="5dp"
+        android:layout_below="@+id/toolbar"
         android:text="Explore Events"
         android:textColor="#FFFFFFFF"
         android:textSize="25dp"

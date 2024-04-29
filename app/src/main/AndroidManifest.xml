@@ -35,6 +35,10 @@
         <activity android:name=".Weather"></activity>
         <activity android:name=".cityFinder"></activity>
         <activity android:name=".Feedback"></activity>
+        <activity android:name=".Contactus" android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" /></activity>
     </application>
 
 </manifest>

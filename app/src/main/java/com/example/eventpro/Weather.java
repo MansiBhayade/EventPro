@@ -35,7 +35,7 @@ public class Weather extends AppCompatActivity {
     final float MIN_DISTANCE = 1000;
     final int REQUEST_CODE = 101;
 
-    String Location_Provider = LocationManager.GPS_PROVIDER;
+
 
     TextView NameofCity, weatherState, Temperature;
     ImageView mweatherIcon;
@@ -43,8 +43,7 @@ public class Weather extends AppCompatActivity {
     Button mCityFinder;
 
 
-    LocationManager mLocationManager;
-    LocationListener mLocationListner;
+
 
 
     @Override
@@ -56,16 +55,9 @@ public class Weather extends AppCompatActivity {
         Temperature = findViewById(R.id.temperature);
         mweatherIcon = findViewById(R.id.weatherIcon);
         NameofCity = findViewById(R.id.cityName);
-        mCityFinder = findViewById(R.id.btn_next);
 
-        mCityFinder.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Weather.this, cityFinder.class);
-                startActivity(intent);
-            }
-        });
-        getWeatherForCurrentLocation();
+
+
     }
 /*
     @Override
@@ -92,79 +84,6 @@ public class Weather extends AppCompatActivity {
         params.put("q",city);
         params.put("appid",APP_ID);
         letsdoSomeNetworking(params);
-
-    }
-
-
-    private void getWeatherForCurrentLocation() {
-
-        mLocationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-        mLocationListner = new LocationListener() {
-            @Override
-            public void onLocationChanged(Location location) {
-
-                String Latitude = String.valueOf(location.getLatitude());
-                String Longitude = String.valueOf(location.getLongitude());
-
-                RequestParams params =new RequestParams();
-                params.put("lat" ,Latitude);
-                params.put("lon",Longitude);
-                params.put("appid",APP_ID);
-                letsdoSomeNetworking(params);
-
-            }
-
-            @Override
-            public void onStatusChanged(String provider, int status, Bundle extras) {
-
-            }
-
-            @Override
-            public void onProviderEnabled(String provider) {
-
-            }
-
-            @Override
-            public void onProviderDisabled(String provider) {
-                //not able to get location
-            }
-        };
-
-
-        if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            // TODO: Consider calling
-            //    ActivityCompat#requestPermissions
-            // here to request the missing permissions, and then overriding
-            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-            //                                          int[] grantResults)
-            // to handle the case where the user grants the permission. See the documentation
-            // for ActivityCompat#requestPermissions for more details.
-            ActivityCompat.requestPermissions(this,new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION},REQUEST_CODE);
-            return;
-        }
-        mLocationManager.requestLocationUpdates(Location_Provider, MIN_TIME, MIN_DISTANCE, mLocationListner);
-
-    }
-
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-
-
-        if(requestCode==REQUEST_CODE)
-        {
-            if(grantResults.length>0 && grantResults[0]==PackageManager.PERMISSION_GRANTED)
-            {
-                Toast.makeText(Weather.this,"Locationget Succesffully",Toast.LENGTH_SHORT).show();
-                getWeatherForCurrentLocation();
-            }
-            else
-            {
-                //user denied the permission
-            }
-        }
-
 
     }
 
@@ -208,15 +127,5 @@ public class Weather extends AppCompatActivity {
         mweatherIcon.setImageResource(resourceID);
 
 
-    }
-
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        if(mLocationManager!=null)
-        {
-            mLocationManager.removeUpdates(mLocationListner);
-        }
     }
 }

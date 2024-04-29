@@ -93,7 +93,7 @@ public class MainAdapter extends FirebaseRecyclerAdapter<MainModel,MainAdapter.m
             btn_weather.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(itemView.getContext(), Weather.class);
+                    Intent intent = new Intent(itemView.getContext(), cityFinder.class);
                     itemView.getContext().startActivity(intent);
                 }
             });
