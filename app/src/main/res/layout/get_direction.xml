@@ -5,26 +5,60 @@
     android:orientation="vertical"
     android:gravity="center"
     android:padding="20dp"
-    android:background="@drawable/img4"
-    >
+    android:background="@drawable/img4">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Get Directions"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:id="@+id/instructions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome to the navigation screen. The destination is pre-set based on the event you've chosen. The source location is initially set to your current location, but you can customize it as needed."
+        android:textSize="16sp"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:id="@+id/source_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Source:"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="4dp"/>
 
     <EditText
         android:id="@+id/source_location"
-        android:hint="Enter your source location"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:hint="Enter your source location"
         android:textColorHint="#FBFBFB"
-        android:layout_marginBottom="6dp">
-    </EditText>
+        android:layout_marginBottom="16dp"
+        android:gravity="center"/>
 
+    <TextView
+        android:id="@+id/destination_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Destination:"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="4dp"/>
 
     <EditText
         android:id="@+id/destination_location"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Enter your destination location"
         android:textColorHint="#FBFBFB"
-        android:layout_marginBottom="6dp"></EditText>
+        android:layout_marginBottom="16dp"
+        android:enabled="false"
+        android:gravity="center"/>
 
     <Button
         android:id="@+id/btn_submit"
@@ -32,7 +66,7 @@
         android:layout_height="wrap_content"
         android:text="Open Navigation"
         android:background="#673AB7"
-        android:padding="10dp"></Button>
-
+        android:textColor="#FFFFFF"
+        android:padding="10dp"/>
 
 </LinearLayout>
