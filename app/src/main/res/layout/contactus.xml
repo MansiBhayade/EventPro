@@ -8,36 +8,34 @@
         android:id="@+id/text1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Want your event to be shown on our app?"
-        android:background="@color/white"
-        android:textColor="@color/black"
-        android:textSize="15dp"
+        android:layout_above="@+id/blank"
         android:layout_centerInParent="true"
-        android:padding="10dp"/>
+        android:background="@color/white"
+        android:padding="10dp"
+        android:layout_margin="10dp"
+        android:text="Want your event to be shown on our app?"
+        android:textColor="@color/black"
+        android:textSize="15dp" />
 
     <TextView
        android:id="@+id/blank"
-        android:layout_below="@+id/text1"
+        android:layout_above="@+id/text2"
         android:layout_width="wrap_content"
         android:layout_height="10dp"
-
         android:textColor="@color/black"
         android:textSize="15dp"
-        android:layout_centerInParent="true"
         android:padding="10dp"/>
 
     <TextView
         android:id="@+id/text2"
-        android:layout_below="@+id/blank"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Feel free to reach out to us on the contact below:"
         android:background="@color/white"
-        android:textColor="@color/black"
-        android:textSize="15dp"
         android:padding="10dp"
+        android:text="Feel free to reach out to us on the contact below:"
+        android:textColor="@color/black"
         android:layout_centerInParent="true"
-        />
+        android:textSize="15dp" />
 
     <TextView
         android:layout_below="@+id/text2"
@@ -49,6 +47,8 @@
         android:padding="10dp"
         android:layout_centerInParent="true"
         android:textStyle="bold"
+        android:autoLink="email"
+        android:onClick="sendEmail"
         />
 
 
